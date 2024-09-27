@@ -37,14 +37,17 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: GardenBridge
-  m_Shader: {fileID: -6465566751694194690, guid: 7b75b3da9321a0f4a95c733a3a395955, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 7b75b3da9321a0f4a95c733a3a395955,
+    type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _BUILTIN_ALPHATEST_ON
-  - _BUILTIN_AlphaClip
+  - _ALPHATEST_ON
   - _MASKSNUMBER__1
   - _TYPE_PLANE
   m_InvalidKeywords:
-  - _ALPHATEST_ON
+  - _BUILTIN_ALPHATEST_ON
+  - _BUILTIN_AlphaClip
   - _WORLDDISSOLVE_ID__1
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -57,6 +60,7 @@ Material:
   - TransparentDepthPostpass
   - TransparentBackface
   - RayTracingPrepass
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -128,7 +132,7 @@ Material:
     - _AlphaCutoffEnable: 0
     - _AlphaDstBlend: 0
     - _AlphaSrcBlend: 1
-    - _AlphaToMask: 0
+    - _AlphaToMask: 1
     - _AlphaToMaskInspectorValue: 0
     - _BUILTIN_AlphaClip: 1
     - _BUILTIN_Blend: 0

@@ -24,12 +24,12 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Gravels_Mat
-  m_Shader: {fileID: -6465566751694194690, guid: f9d821d0342b4294fbb1c5a4cd670a9b, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: f9d821d0342b4294fbb1c5a4cd670a9b,
+    type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _ALPHATEST_ON
-  - _DISABLE_DECALS
-  - _DISABLE_SSR
-  - _DISABLE_SSR_TRANSPARENT
   - _MASKSNUMBER__3
   - _PARALLAX
   - _TYPE_SPHERE
@@ -37,6 +37,9 @@ Material:
   m_InvalidKeywords:
   - _BUILTIN_ALPHATEST_ON
   - _BUILTIN_AlphaClip
+  - _DISABLE_DECALS
+  - _DISABLE_SSR
+  - _DISABLE_SSR_TRANSPARENT
   - _WORLDDISSOLVE_ID__1
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -52,6 +55,7 @@ Material:
   - RayTracingPrepass
   - SHADOWCASTER
   - MOTIONVECTORS
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -143,7 +147,7 @@ Material:
     - _AlphaCutoffEnable: 1
     - _AlphaDstBlend: 0
     - _AlphaSrcBlend: 1
-    - _AlphaToMask: 0
+    - _AlphaToMask: 1
     - _AlphaToMaskInspectorValue: 0
     - _BUILTIN_AlphaClip: 1
     - _BUILTIN_Blend: 0
