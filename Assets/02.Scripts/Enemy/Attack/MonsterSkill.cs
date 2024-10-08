@@ -5,6 +5,7 @@ using UnityEngine;
 
 public abstract class MonsterSkill : MonoBehaviour
 {
+    public int phaseLevel;
     public int priority;
     public float skillRange;
     public float skillCoolTime;
@@ -13,20 +14,16 @@ public abstract class MonsterSkill : MonoBehaviour
     public float skillStartDelayTime;
     public float skillEndDelayTime;
 
-    public MonsterSkillControler skillControler;
-    public GameObject target;
-    public Animator animator;
-    protected MonsterBaseStat stat;
+    private GameObject target;
+    protected Animator animator;
 
     public LayerMask targetLayer;           // 공격할 대상의 레이어 (플레이어 레이어 설정)
     public LayerMask obstacleLayer;         // 장애물 레이어
 
     private void Start()
     {
-        skillControler = GetComponent<MonsterSkillControler>();
         animator = GetComponent<Animator>();
-        target = GameObject.FindGameObjectWithTag("Player");
-        stat = GetComponent<MonsterBaseStat>();
+        target = GameObject.FindWithTag("Player");
     }
 
     public void UpdateCooldown(float deltaTime)
@@ -50,5 +47,5 @@ public abstract class MonsterSkill : MonoBehaviour
         return currentCooltime <= 0;
     }
 
-    public abstract void PerformAttack();
+    public abstract void PerformAttack(int skillNum);
 }

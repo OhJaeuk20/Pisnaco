@@ -33,6 +33,7 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
+        if (PlayerStat.playerDie) return;
         // 공격 입력 지연 처리
         if (Input.GetMouseButtonDown(0) && !isAttackInput)
         {
@@ -61,12 +62,6 @@ public class PlayerAttack : MonoBehaviour
         yield return attackInputWait; // 공격 입력 지연 대기
 
         isAttackInput = false; // 공격 입력 불가능
-    }
-
-    public void ToggleWeaponCollider()
-    {
-        if(weapon != null)
-            weapon.weaponArea.enabled = !weapon.weaponArea.enabled;
     }
 
     public bool IsPlayAttackAnimation()

@@ -9,10 +9,4 @@ public class PWeapon : MonoBehaviour
     public Type type;
     public int damage;
     public int smashDamage;
-    public BoxCollider weaponArea;
-
-    void Start()
-    {
-        weaponArea = GetComponent<BoxCollider>();    
-    }
 }

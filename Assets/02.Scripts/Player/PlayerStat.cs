@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
 using UnityEngine.VFX;
 
 public class PlayerStat : MonoBehaviour
 {
-    public int maxHealth;
-    public int curHealth;
+    static public bool playerDie = false;
+
+    public int maxHp;
+    public int currentHp;
     public float speed;
     public float rotateSpeed;
     public bool isKnockDown = false;
@@ -14,36 +17,19 @@ public class PlayerStat : MonoBehaviour
 
     public LayerMask scanLayer;
 
+    private Animator animator;
     public PWeapon equipWeapon;
-
-    private bool isHit = false;
 
     void Start()
     {
+        animator = GetComponent<Animator>();
         equipWeapon = GetComponentInChildren<PWeapon>();
+        currentHp = maxHp;
     }
 
     void Update()
     {
         ScanTimeObject();
-    }
-
-    private void OnTriggerEnter(Collider coll)
-    {
-        if ((coll.gameObject.CompareTag("DAMAGE1") || coll.gameObject.CompareTag("KNOCKBACKDAMAGE1")) && !isHit)
-        {
-            curHealth -= 1;
-            Debug.Log("HEALTH -1");
-
-            StartCoroutine(HitChk());
-        }
-    }
-
-    IEnumerator HitChk()
-    {
-        isHit = true;
-        yield return new WaitForSeconds(1.0f);
-        isHit = false;
     }
 
     private void ScanTimeObject()
@@ -57,6 +43,21 @@ public class PlayerStat : MonoBehaviour
             {
                 collider.GetComponent<TimeObjController>().Recover(); 
             }
+        }
+    }
+
+    public void Hit(int damage)
+    {
+        // 체력 감소 처리
+        currentHp -= damage;
+        currentHp = Mathf.Clamp(currentHp, 0, maxHp);
+
+        if (currentHp <= 0)
+        {
+            // 피격 상태로 전환
+            playerDie = true;
+            animator.SetTrigger("Die");
+            Debug.Log("플레이어가 죽었습니다.");
         }
     }
 }

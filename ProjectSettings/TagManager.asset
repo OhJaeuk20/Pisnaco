@@ -7,7 +7,6 @@ TagManager:
   - MELEE
   - SMELEE
   - DAMAGE1
-  - KNOCKBACKDAMAGE1
   - STUNOBJ
   - WALL
   - Collide
@@ -20,8 +19,8 @@ TagManager:
   - Water
   - UI
   - WALL
-  - 
-  - 
+  - Player
+  - Monster
   - 
   - 
   - 

@@ -42,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (PlayerStat.playerDie) return;
         GravityDown();
 
         if (stat.isKnockDown) KnockDownTimer();
@@ -101,15 +102,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider coll)
+    public void KnockBack(Vector3 dir)
     {
-        if (coll.gameObject.CompareTag("KNOCKBACKDAMAGE1"))
-        {
-            currentStunTime = 0.0f;
-            knockDownDir = (transform.position - coll.transform.position).normalized;
-            transform.LookAt(transform.position - knockDownDir);
-            animator.SetTrigger("KnockDown");
-        }
+        knockDownDir = dir;
+        transform.LookAt(transform.position - knockDownDir);
+        animator.SetTrigger("KnockDown");
     }
 
     public void KnockDownMove()
