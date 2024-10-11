@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3947313135370164641}
   - component: {fileID: 101462895513556484}
   - component: {fileID: 2777736626647278286}
-  - component: {fileID: -2306246915433175638}
   m_Layer: 0
   m_Name: SM_Bld_Beam_Broken_01
   m_TagString: Untagged
@@ -84,24 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &-2306246915433175638
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4435056959813092123}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.3638682, y: 0.39999998, z: 0.5030077}
-  m_Center: {x: -1.1819339, y: 0, z: 0.001503855}
