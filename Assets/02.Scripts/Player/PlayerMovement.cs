@@ -1,6 +1,8 @@
+using RPGCharacterAnims.Lookups;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.EventSystems;
 
 public class PlayerMovement : MonoBehaviour
@@ -8,11 +10,13 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController characterController;
     private PlayerStat stat;
     private Animator animator;
-    private PlayerAttack attack;
+    private PlayerAttackInput attack;
 
     // ³Ë´Ù¿î ¹æÇâ, Èû
-    [SerializeField] private float knockBackForce;
+    [SerializeField] private float knockbackForce;
+    [SerializeField] private float knockbackTime;
     private Vector3 knockDownDir = Vector3.zero;
+    
     public float stunDuration;
     public float currentStunTime;
 
@@ -37,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         stat = GetComponent<PlayerStat>();
-        attack = GetComponent<PlayerAttack>();
+        attack = GetComponent<PlayerAttackInput>();
     }
 
     void Update()
@@ -107,11 +111,19 @@ public class PlayerMovement : MonoBehaviour
         knockDownDir = dir;
         transform.LookAt(transform.position - knockDownDir);
         animator.SetTrigger("KnockDown");
+        StartCoroutine(ApplyHitKnockback(dir));
     }
 
-    public void KnockDownMove()
+    private IEnumerator ApplyHitKnockback(Vector3 hitDirection)
     {
-        characterController.Move((knockDownDir + transform.up).normalized * knockBackForce * Time.deltaTime);
+        // ³Ë¹é ÀÌµ¿ Ã³¸® ÁøÇà
+        float timer = 0f;
+        while (timer < knockbackTime)
+        {
+            characterController.Move((knockDownDir + transform.up).normalized * knockbackForce * Time.deltaTime);
+            timer += Time.deltaTime;
+            yield return null;
+        }
     }
 
     public void KnockDownTimer()

@@ -26,7 +26,6 @@ public class ChargeSmb : StateMachineBehaviour
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.GetComponent<MonsterSkillController>().IsCastingToggle();
         animator.GetComponent<MonsterSkillController>().ResetAttackDistance();
         animator.GetComponent<SkeletonChargeAttack>().boxCollider.enabled = false;
         animator.GetComponent<SkeletonChargeAttack>().capsuleCollider.enabled = true;

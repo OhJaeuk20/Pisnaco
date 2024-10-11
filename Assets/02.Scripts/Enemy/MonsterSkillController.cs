@@ -7,13 +7,12 @@ public class MonsterSkillController : MonoBehaviour
 {
     [SerializeField]
     private MonsterSkill nextSkill = null;
-    public MonsterSkill NextSkill { get => nextSkill;}
+    public MonsterSkill NextSkill { get => nextSkill; set => nextSkill = value;}
 
     public List<MonsterSkill> skillVarient = new List<MonsterSkill>();
 
     private float defaultAttackDistance;
 
-    public bool skillAlreadyUse;
     public bool isCasting = false;
 
     private MonsterFSMInfo FSMInfo;
@@ -45,7 +44,7 @@ public class MonsterSkillController : MonoBehaviour
 
     void CheckNextAttack()
     {
-        nextSkill = null;
+        //nextSkill = null;
         int highestPriority = int.MaxValue;
 
         foreach (MonsterSkill skill in skillVarient )
@@ -73,14 +72,14 @@ public class MonsterSkillController : MonoBehaviour
         }
     }
 
-    public void IsCastingToggle()
-    {
-        isCasting = !isCasting;
-        animator.SetBool("IsCasting", isCasting);
-    }
-
     public void ResetAttackDistance()
     {
         FSMInfo.AttackDistance = defaultAttackDistance;
+    }
+
+    public void SetIsCasting(bool tf)
+    {
+        isCasting = tf;
+        animator.SetBool("IsCasting", isCasting);
     }
 }

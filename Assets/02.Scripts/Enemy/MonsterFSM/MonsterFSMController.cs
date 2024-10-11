@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
+using System.Linq;
 
 // 몬스터 FSM 컨트롤러
 public class MonsterFSMController : MonoBehaviour
@@ -58,5 +60,19 @@ public class MonsterFSMController : MonoBehaviour
 	public float GetPlayerDistance()
 	{
 		return Vector3.Distance(transform.position, Player.transform.position);
+	}
+
+	public int CurrentStateToInt()
+	{
+		int stateNum = 0;
+		foreach (MonsterState curState in monsterStates)
+		{
+			if (curState == currentState)
+			{
+				break;
+			}
+			stateNum++;
+		}
+		return stateNum;
 	}
 }

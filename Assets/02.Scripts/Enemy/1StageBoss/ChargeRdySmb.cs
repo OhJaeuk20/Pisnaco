@@ -6,7 +6,7 @@ public class ChargeRdySmb : StateMachineBehaviour
 { 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.GetComponent<MonsterSkillController>().IsCastingToggle();
+
     }
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

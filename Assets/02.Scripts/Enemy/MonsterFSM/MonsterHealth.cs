@@ -14,7 +14,7 @@ public class MonsterHealth : MonoBehaviour, IDamagable
     [SerializeField] protected Image hpBarImage;
 
     // FSM 컨트롤러
-    private MonsterFSMController controller;
+    protected MonsterFSMController controller;
 
     // 피격 여부
     private bool isHit = false;
@@ -31,7 +31,7 @@ public class MonsterHealth : MonoBehaviour, IDamagable
     }
 
     // 피격 처리
-    public void Hit(int damage)
+    public virtual void Hit(int damage)
     {
         // 체력 감소 처리
         currentHp -= damage;
@@ -39,7 +39,7 @@ public class MonsterHealth : MonoBehaviour, IDamagable
 
         if (currentHp <= 0)
         {
-            // 피격 상태로 전환
+            // 죽음 상태로 전환
             controller.TransactionToState(MonsterFSMController.STATE.DEATH);
         }
         else

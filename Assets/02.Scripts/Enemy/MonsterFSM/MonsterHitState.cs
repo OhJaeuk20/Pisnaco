@@ -36,7 +36,7 @@ public class MonsterHitState : MonsterState
         navMeshAgent.isStopped = true;
 
         // 피격 효과 처리
-        //hitParticle.Play();
+        hitParticle.Play();
 
         // 피격 애니메이션 재생
         animator.SetInteger("State", (int)state);

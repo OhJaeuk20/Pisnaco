@@ -16,12 +16,15 @@ public class MonsterDeathState : MonsterState
     // 사망 처리 이펙트
     [SerializeField] protected GameObject destroyParticlePrefab;
 
-    [SerializeField] protected Transform destroyParticleTr;
+    protected Transform destroyParticleTr;
 
     // 피격 넉백 시간
     [SerializeField] protected float knockbackTime;
     // 피격 넉백 힘
     [SerializeField] protected float knockbackForce;
+
+    // 시체 가라앉는 속도
+    [SerializeField] protected float sinkSpeed;
 
     //  사망 상태 시작
     public override void EnterState(MonsterFSMController.STATE state)
@@ -54,7 +57,6 @@ public class MonsterDeathState : MonsterState
 	public override void ExitState()
 	{
         // 몬스터가 소멸됨
-        Instantiate(destroyParticlePrefab, destroyParticleTr.position, Quaternion.identity);
         Destroy(gameObject);
     }
 
@@ -71,6 +73,28 @@ public class MonsterDeathState : MonsterState
             navMeshAgent.Move(hitDirection * knockbackForce * Time.deltaTime);
             timer += Time.deltaTime;
             yield return null;
+        }
+        
+    }
+
+    public void StartSinkingCoroutine()
+    {
+        navMeshAgent.enabled = false;
+        Instantiate(destroyParticlePrefab, transform.position, Quaternion.identity);
+        StartCoroutine(SinkCoroutine());
+    }
+
+    private IEnumerator SinkCoroutine()
+    {
+        float sinkDuration = 5f;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < sinkDuration)
+        {
+            // y축으로 천천히 가라앉음
+            transform.position -= new Vector3(0, sinkSpeed * Time.deltaTime, 0);
+            elapsedTime += Time.deltaTime;
+            yield return null;  // 한 프레임 기다림
         }
     }
 }
