@@ -49,9 +49,4 @@ public class MonsterAttackState : MonsterState
         // 보간 회전
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * fsmInfo.LookAtMaxSpeed);
     }
-
-    public void Hit()
-    {
-        
-    }
 }

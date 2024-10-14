@@ -14,6 +14,9 @@ public abstract class MonsterSkill : MonoBehaviour
     public float skillStartDelayTime;
     public float skillEndDelayTime;
 
+    [SerializeField] protected float knockbackForce;
+    [SerializeField] protected float knockbackTime;
+
     private GameObject target;
     protected Animator animator;
 

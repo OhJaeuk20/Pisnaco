@@ -13,8 +13,6 @@ public class PlayerMovement : MonoBehaviour
     private PlayerAttackInput attack;
 
     // ³Ë´Ù¿î ¹æÇâ, Èû
-    [SerializeField] private float knockbackForce;
-    [SerializeField] private float knockbackTime;
     private Vector3 knockDownDir = Vector3.zero;
     
     public float stunDuration;
@@ -106,15 +104,15 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void KnockBack(Vector3 dir)
+    public void KnockBack(Vector3 dir, float knockbackTime, float knockbackForce)
     {
         knockDownDir = dir;
         transform.LookAt(transform.position - knockDownDir);
         animator.SetTrigger("KnockDown");
-        StartCoroutine(ApplyHitKnockback(dir));
+        StartCoroutine(ApplyHitKnockback(dir, knockbackTime, knockbackForce));
     }
 
-    private IEnumerator ApplyHitKnockback(Vector3 hitDirection)
+    private IEnumerator ApplyHitKnockback(Vector3 hitDirection, float knockbackTime, float knockbackForce)
     {
         // ³Ë¹é ÀÌµ¿ Ã³¸® ÁøÇà
         float timer = 0f;

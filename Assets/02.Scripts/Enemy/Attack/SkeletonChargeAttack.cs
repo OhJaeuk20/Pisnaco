@@ -74,7 +74,7 @@ public class SkeletonChargeAttack : MonsterSkill
             }
 
             // 플레이어 넉백 처리
-            coll.GetComponent<PlayerMovement>().KnockBack(knockBackDir);
+            coll.GetComponent<PlayerMovement>().KnockBack(knockBackDir, knockbackTime, knockbackTime);
 
             // 플레이어에게 1 데미지
             coll.GetComponent<PlayerStat>().Hit(1);

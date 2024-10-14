@@ -22,6 +22,7 @@ public class BossHealth : MonsterHealth
         if (currentHp <= phase2Hp && currentPhase != PHASE.PHASE2)
         {
             currentPhase = PHASE.PHASE2;
+            controller.TransactionToState(MonsterFSMController.STATE.ACTION);
         }
 
         if (currentHp <= phase3Hp && currentPhase != PHASE.PHASE3)

@@ -8,7 +8,7 @@ using System.Linq;
 public class MonsterFSMController : MonoBehaviour
 {
     // 몬스터 상태들
-    public enum STATE { IDLE, WANDER, DETECT, ATTACK, GIVEUP, HIT, DEATH }
+    public enum STATE { IDLE, WANDER, DETECT, ATTACK, GIVEUP, HIT, DEATH, ACTION }
 
     // 몬스터의 현재 동작 상태
     [SerializeField] private MonsterState currentState;
