@@ -175,7 +175,7 @@ Material:
     - _Cull: 0
     - _CullMode: 0
     - _CullModeForward: 0
-    - _Cutoff: 0.0001
+    - _Cutoff: 0
     - _DepthOffsetEnable: 0
     - _DetailNormalMapScale: 1.46
     - _DisplacementOffset: 0.5
