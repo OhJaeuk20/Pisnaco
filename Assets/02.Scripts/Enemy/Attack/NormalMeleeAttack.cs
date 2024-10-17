@@ -13,13 +13,7 @@ public class NormalMeleeAttack : MonsterSkill
     }
 
     // 공격 타겟 중심점 위치
-    [SerializeField] private Transform attackTransform;
-
-    // 공격 범위
-    [SerializeField] private float attackRadius;
-
-    // 공격 범위 각도
-    [SerializeField] private float hitAngle;
+    [SerializeField] private Transform attackTransform;    
 
     // 공격 애니메이션 피격 이벤트
     public void AttackPlayerAnimationEvent()

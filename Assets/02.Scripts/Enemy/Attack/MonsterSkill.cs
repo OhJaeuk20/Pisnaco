@@ -7,23 +7,24 @@ public abstract class MonsterSkill : MonoBehaviour
 {
     public int phaseLevel;
     public int priority;
+    public float minskillRange;
     public float skillRange;
     public float skillCoolTime;
     public float currentCooltime;
 
-    public float skillStartDelayTime;
-    public float skillEndDelayTime;
+    [SerializeField] protected float attackRadius;
+    [SerializeField] protected float hitAngle;
 
     [SerializeField] protected float knockbackForce;
     [SerializeField] protected float knockbackTime;
 
-    private GameObject target;
+    public GameObject target;
     protected Animator animator;
 
     public LayerMask targetLayer;           // 공격할 대상의 레이어 (플레이어 레이어 설정)
     public LayerMask obstacleLayer;         // 장애물 레이어
 
-    private void Start()
+    private void Awake()
     {
         animator = GetComponent<Animator>();
         target = GameObject.FindWithTag("Player");
@@ -42,7 +43,7 @@ public abstract class MonsterSkill : MonoBehaviour
         if (target == null)
             return false;
         float distance = (target.transform.position - transform.position).magnitude;
-        return distance < skillRange;
+        return (minskillRange < distance) && (distance < skillRange);
     }
 
     public bool IsReady()
