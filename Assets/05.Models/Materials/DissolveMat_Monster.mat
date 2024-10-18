@@ -106,6 +106,7 @@ Material:
     - _CastShadows: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
+    - _CrackAmount: 0.51
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
@@ -113,7 +114,7 @@ Material:
     - _DisplacementOffset: 0
     - _DisplacementPerVertex: 0
     - _DisplacementSmoothness: 0
-    - _DissolveAmount: 0.432
+    - _DissolveAmount: 0
     - _DissolveScale: 40
     - _DissolveWidth: 0.04
     - _DstBlend: 0
@@ -161,6 +162,7 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BurnColor: {r: 0.3301887, g: 0.3301887, b: 0.3301887, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _CrackColor: {r: 1, g: 0, b: 0, a: 0}
     - _DissolveColor: {r: 0.3901996, g: 0.5740769, b: 2.215777, a: 0}
     - _EmberColor: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}

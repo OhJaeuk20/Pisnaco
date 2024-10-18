@@ -216,7 +216,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 515763845}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3626201, y: -1e-45, z: 1e-45, w: 0.9319371}
+  m_LocalRotation: {x: 0.3626201, y: -1e-45, z: 0, w: 0.9319371}
   m_LocalPosition: {x: 0, y: 20, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3618,7 +3618,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1576932174}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3626201, y: -1e-45, z: 1e-45, w: 0.9319371}
+  m_LocalRotation: {x: 0.3626201, y: -1e-45, z: -0, w: 0.9319371}
   m_LocalPosition: {x: 0, y: 20, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4100,6 +4100,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dark_Lord
       objectReference: {fileID: 0}
+    - target: {fileID: 3467140189446029317, guid: 8db3d28fe4151634a9a60ba00130db40,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8624228056402696347, guid: 8db3d28fe4151634a9a60ba00130db40,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4296,6 +4301,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3889471702120297124, guid: 702ad6e86b6144645a36e9ca7ed749b6,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.1764706
+      objectReference: {fileID: 0}
+    - target: {fileID: 6872009684023592906, guid: 702ad6e86b6144645a36e9ca7ed749b6,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.1764706
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
