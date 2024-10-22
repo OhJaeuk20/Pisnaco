@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
+using UnityEngine.AI;
 
 public abstract class MonsterSkill : MonoBehaviour
 {
@@ -18,16 +19,18 @@ public abstract class MonsterSkill : MonoBehaviour
     [SerializeField] protected float knockbackForce;
     [SerializeField] protected float knockbackTime;
 
-    public GameObject target;
+    protected GameObject target;
     protected Animator animator;
+    protected NavMeshAgent navMeshAgent;
 
     public LayerMask targetLayer;           // 공격할 대상의 레이어 (플레이어 레이어 설정)
     public LayerMask obstacleLayer;         // 장애물 레이어
 
-    private void Awake()
+    void Awake()
     {
         animator = GetComponent<Animator>();
         target = GameObject.FindWithTag("Player");
+        navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
     public void UpdateCooldown(float deltaTime)

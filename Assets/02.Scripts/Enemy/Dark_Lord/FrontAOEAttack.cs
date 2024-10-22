@@ -56,11 +56,11 @@ public class FrontAOEAttack : MonsterSkill
     private IEnumerator TriggerExplosions()
     {
         Vector3 startPosition = transform.position + transform.forward * startDistance;
-
+        Vector3 dir = transform.forward;
         for (int i = 0; i < explosionCount; i++)
         {
             // 각 폭발의 위치는 캐릭터의 전방으로 일정 거리 떨어진 위치
-            Vector3 explosionPosition = startPosition + transform.forward * (explosionDistance * i);
+            Vector3 explosionPosition = startPosition + dir * (explosionDistance * i);
 
             // 폭발 프리팹을 인스턴스화하여 생성
             Instantiate(explosionPrefab, explosionPosition, Quaternion.identity);

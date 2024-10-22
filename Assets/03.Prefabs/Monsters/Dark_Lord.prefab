@@ -5062,6 +5062,37 @@ Transform:
   - {fileID: 3482258539080590502}
   m_Father: {fileID: 3603113989261247001}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1180956630122544067
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5983354440179097217}
+  m_Layer: 8
+  m_Name: areaFxPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5983354440179097217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180956630122544067}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8624228056402696347}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1372128505082313905
 GameObject:
   m_ObjectHideFlags: 0
@@ -15494,6 +15525,9 @@ GameObject:
   - component: {fileID: 6119082230163953567}
   - component: {fileID: 4614319983969555545}
   - component: {fileID: 7664648966697881691}
+  - component: {fileID: 8885292191966540519}
+  - component: {fileID: 2287018271011355607}
+  - component: {fileID: 1911286230415374734}
   m_Layer: 8
   m_Name: Dark_Lord
   m_TagString: Untagged
@@ -15519,6 +15553,7 @@ Transform:
   - {fileID: 4822592039434725762}
   - {fileID: 6959109338905137721}
   - {fileID: 7755850141701037387}
+  - {fileID: 5983354440179097217}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!95 &4402776099122633543
@@ -15549,7 +15584,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3467140189446029317}
-  m_Material: {fileID: 13400000, guid: b8d51bdc1263c7242aaabab2e78f7cdd, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -15604,6 +15639,8 @@ MonoBehaviour:
   - {fileID: 2715505281801416359}
   - {fileID: 1752285881106779653}
   - {fileID: 5914705296768166191}
+  summonEffect: {fileID: 1101628993156436195, guid: 1d901da832c7f9146ac6c16652bc845c,
+    type: 3}
 --- !u!114 &1978684321662136218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15651,7 +15688,6 @@ MonoBehaviour:
   - {fileID: 4962160782547674115}
   - {fileID: 6655849633667203005}
   - {fileID: 7548841440876375724}
-  - {fileID: 3152656562916484834}
 --- !u!114 &8101680827254726881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15671,6 +15707,9 @@ MonoBehaviour:
   - {fileID: 6119082230163953567}
   - {fileID: 4614319983969555545}
   - {fileID: 7664648966697881691}
+  - {fileID: 8885292191966540519}
+  - {fileID: 2287018271011355607}
+  - {fileID: 1911286230415374734}
   isCasting: 0
 --- !u!114 &2748278859149374484
 MonoBehaviour:
@@ -15729,7 +15768,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animSpeed: 1
-  isChanneling: 0
   dontTurn: 0
 --- !u!114 &4962160782547674115
 MonoBehaviour:
@@ -15810,7 +15848,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 50
-  currentHp: 0
+  currentHp: 50
   hpBarImage: {fileID: 0}
   hitParticle: {fileID: 8543008122794313205}
   phase2Hp: 40
@@ -15838,7 +15876,6 @@ MonoBehaviour:
   hitAngle: 80
   knockbackForce: 0
   knockbackTime: 0
-  target: {fileID: 0}
   targetLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -15868,7 +15905,6 @@ MonoBehaviour:
   hitAngle: 20
   knockbackForce: 0
   knockbackTime: 0
-  target: {fileID: 0}
   targetLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -15904,7 +15940,6 @@ MonoBehaviour:
   hitAngle: 0
   knockbackForce: 0
   knockbackTime: 0
-  target: {fileID: 0}
   targetLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -15938,7 +15973,6 @@ MonoBehaviour:
   hitAngle: 0
   knockbackForce: 0
   knockbackTime: 0
-  target: {fileID: 0}
   targetLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -15962,7 +15996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f23f214981b0aa4c8e2fa962459c10e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  phaseLevel: 0
+  phaseLevel: 1
   priority: 0
   minskillRange: 0
   skillRange: 100
@@ -15972,7 +16006,6 @@ MonoBehaviour:
   hitAngle: 0
   knockbackForce: 0
   knockbackTime: 0
-  target: {fileID: 0}
   targetLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -15983,6 +16016,118 @@ MonoBehaviour:
   horizontalRange: 3
   delayTime: 3
   boxSize: {x: 3, y: 1, z: 10}
+--- !u!114 &8885292191966540519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3467140189446029317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 660218d67d403d8479c305b4094bcc23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  phaseLevel: 1
+  priority: 0
+  minskillRange: 3
+  skillRange: 50
+  skillCoolTime: 10
+  currentCooltime: 3
+  attackRadius: 50
+  hitAngle: 0
+  knockbackForce: 0
+  knockbackTime: 0
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  arrowPrefab: {fileID: 5310526369049153564, guid: 2782f2e31366d1f429c0b9b55821cb42,
+    type: 3}
+  spawnPoint: {fileID: 6959109338905137721}
+  angleOffsetFor4: 15
+  angleOffsetFor5: 30
+--- !u!114 &2287018271011355607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3467140189446029317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eba35d78a581e294aa2402bd86721ef1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  phaseLevel: 2
+  priority: 0
+  minskillRange: 0
+  skillRange: 100
+  skillCoolTime: 99999
+  currentCooltime: 0
+  attackRadius: 100
+  hitAngle: 0
+  knockbackForce: 0
+  knockbackTime: 0
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 129
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  teleportTarget: {fileID: 0}
+  chargingTime: 10
+  teleFx: {fileID: 6260099209380963192, guid: 64bf56ec44df3d34c8f8eba7a5a0ebac, type: 3}
+  chargingFx: {fileID: 8475341162748297191, guid: 82d39a4fb5cfd2941993d97abdc550ca,
+    type: 3}
+  areaFx: {fileID: 3032085322535844706, guid: 09264658297f5554a883ac220f9c9f33, type: 3}
+  fxTr: {fileID: 5983354440179097217}
+  atkFx: {fileID: 6950868398072570805, guid: 38730292427297b43a6e5403b75bfcec, type: 3}
+  atkTr: {fileID: 6959109338905137721}
+--- !u!114 &1911286230415374734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3467140189446029317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11436103f544da04abaa4fb78a50a145, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  phaseLevel: 0
+  priority: 0
+  minskillRange: 0
+  skillRange: 100
+  skillCoolTime: 30
+  currentCooltime: 3
+  attackRadius: 0
+  hitAngle: 0
+  knockbackForce: 0
+  knockbackTime: 0
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  teleFx: {fileID: 6260099209380963192, guid: 64bf56ec44df3d34c8f8eba7a5a0ebac, type: 3}
+  teleportTarget: {fileID: 0}
+  landRangeFx: {fileID: 3735160360019666383, guid: 98842f362fb987744a575b6c4c60ed20,
+    type: 3}
+  landAtkFx: {fileID: 8488500773985116537, guid: 9baaaed66b78f4f4cbb6b5d121f5fc9a,
+    type: 3}
+  spearPrefab: {fileID: 3247575572556381400, guid: 887a49dc83e87434ab21b945d6f465fb,
+    type: 3}
+  spawnPoint: {fileID: 0}
+  numberOfSpears: 10
+  timeBetweenShots: 0.2
+  spearSpeed: 20
+  termForLand: 3
+  endDelayTime: 1
 --- !u!1 &3512419604687376242
 GameObject:
   m_ObjectHideFlags: 0

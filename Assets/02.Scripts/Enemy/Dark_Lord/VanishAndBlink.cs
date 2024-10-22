@@ -4,7 +4,6 @@ using UnityEngine.AI;
 
 public class VanishAndBlink : MonsterSkill
 {
-    private NavMeshAgent navMeshAgent;
     private Renderer[] renderers;
 
     [Header("Skill Settings")]
@@ -17,8 +16,7 @@ public class VanishAndBlink : MonsterSkill
 
     void Start()
     {
-        navMeshAgent = GetComponent<NavMeshAgent>();
-        renderers = GetComponentsInChildren<Renderer>(); // 자식 포함 모든 렌더러 캐싱
+        renderers = GetComponentsInChildren<Renderer>(true);
     }
 
     public override void PerformAttack(int skillNum)
@@ -57,6 +55,7 @@ public class VanishAndBlink : MonsterSkill
             // 4. 모든 렌더러를 다시 활성화 (몬스터 나타남)
             Instantiate(vanishParticlePrefab, paricleTr.position, Quaternion.identity);
             SetRenderersActive(true);
+            gameObject.layer = LayerMask.NameToLayer("Monster");
             animator.SetBool("IsChanneling", false);
             Debug.Log("Monster teleported behind the player and reappeared!");
         }

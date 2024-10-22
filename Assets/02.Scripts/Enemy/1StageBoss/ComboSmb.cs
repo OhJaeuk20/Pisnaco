@@ -6,7 +6,7 @@ public class ComboSmb : StateMachineBehaviour
 {
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.GetComponent<BossAttackState>().ToggleDontTurn();
+        animator.GetComponent<BossAttackState>().dontTurn = true;
     }
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -16,6 +16,6 @@ public class ComboSmb : StateMachineBehaviour
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.GetComponent<BossAttackState>().ToggleDontTurn();
+        animator.GetComponent<BossAttackState>().dontTurn = false;
     }
 }

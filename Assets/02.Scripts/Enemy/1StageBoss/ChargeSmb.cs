@@ -14,7 +14,6 @@ public class ChargeSmb : StateMachineBehaviour
         chargeSpeed = animator.GetComponent<SkeletonChargeAttack>().chargeSpeed;
 
         animator.GetComponent<SkeletonChargeAttack>().StartChargeAttack();
-        animator.GetComponent<BossAttackState>().isChanneling = true;
         animator.GetComponent<SkeletonChargeAttack>().boxCollider.enabled = true;
         animator.GetComponent<SkeletonChargeAttack>().capsuleCollider.enabled = false;
     }
@@ -29,6 +28,5 @@ public class ChargeSmb : StateMachineBehaviour
         animator.GetComponent<MonsterSkillController>().ResetAttackDistance();
         animator.GetComponent<SkeletonChargeAttack>().boxCollider.enabled = false;
         animator.GetComponent<SkeletonChargeAttack>().capsuleCollider.enabled = true;
-        animator.GetComponent<BossAttackState>().isChanneling = false;
     }
 }

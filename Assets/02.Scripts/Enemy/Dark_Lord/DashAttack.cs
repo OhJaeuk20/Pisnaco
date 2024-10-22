@@ -16,13 +16,6 @@ public class DashAttack : MonsterSkill
     public float delayTime;
     public Vector3 boxSize; // 감지 범위 크기 (X, Y, Z)
 
-    private NavMeshAgent navMeshAgent;
-
-    private void Start()
-    {
-        navMeshAgent = GetComponent<NavMeshAgent>();
-    }
-
     public void StartDaggerDash()
     {
         animator.SetBool("IsChanneling", true);

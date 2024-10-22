@@ -5,7 +5,6 @@ using UnityEngine;
 // 몬스터 공격 상태
 public class BossAttackState : MonsterState
 {
-    public bool isChanneling = false;
     public bool dontTurn= false;
 
     // 공격 상태 시작
@@ -23,7 +22,10 @@ public class BossAttackState : MonsterState
 	// 공격 상태 진행
 	public override void UpdateState()
 	{
-        if (isChanneling) return;
+        if (dontTurn) return; // 공격 대상을 주시함
+        LookAtTarget();
+
+        if (skillController.isCasting == true) return;
         // 공격 대상이 공격 가능 거리보다 멀어졌다면
         if (controller.GetPlayerDistance() > fsmInfo.AttackDistance)
         {
@@ -31,10 +33,6 @@ public class BossAttackState : MonsterState
             controller.TransactionToState(MonsterFSMController.STATE.DETECT);
             return;
         }
-
-        if (dontTurn) return;
-        // 공격 대상을 주시함
-        LookAtTarget();
     }
 
 	// 공격 상태 종료

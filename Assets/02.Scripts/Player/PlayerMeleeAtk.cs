@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class PlayerMeleeAtk : MonoBehaviour
@@ -45,7 +46,16 @@ public class PlayerMeleeAtk : MonoBehaviour
                 {
                     hit.GetComponent<BossHealth>().Hit(1);
                 }
+                else if(hit.gameObject.tag == "PROJECTILE")
+                {
+                    Destroy(hit.gameObject);
+                }
             }
         }
     }
+
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.DrawSphere(attackTransform.position, attackRadius);
+    //}
 }

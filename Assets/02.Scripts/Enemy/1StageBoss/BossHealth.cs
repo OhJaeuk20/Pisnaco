@@ -13,8 +13,14 @@ public class BossHealth : MonsterHealth
     [SerializeField] private int phase2Hp;
     [SerializeField] private int phase3Hp;
 
+    private Animator animator;
 
     public PHASE currentPhase = PHASE.PHASE1;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -22,12 +28,14 @@ public class BossHealth : MonsterHealth
         if (currentHp <= phase2Hp && currentPhase != PHASE.PHASE2)
         {
             currentPhase = PHASE.PHASE2;
-            controller.TransactionToState(MonsterFSMController.STATE.ACTION);
+            animator.SetInteger("Phase", (int)PHASE.PHASE2);
+            //controller.TransactionToState(MonsterFSMController.STATE.ACTION);
         }
 
         if (currentHp <= phase3Hp && currentPhase != PHASE.PHASE3)
         {
             currentPhase = PHASE.PHASE3;
+            animator.SetInteger("Phase", (int)PHASE.PHASE3);
         }
     }
 

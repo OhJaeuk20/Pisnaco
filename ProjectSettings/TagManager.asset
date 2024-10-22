@@ -11,6 +11,8 @@ TagManager:
   - WALL
   - Collide
   - CinemachineTarget
+  - FxTemporaire
+  - PROJECTILE
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - WALL
   - Player
   - Monster
-  - 
+  - Ground
   - 
   - 
   - 

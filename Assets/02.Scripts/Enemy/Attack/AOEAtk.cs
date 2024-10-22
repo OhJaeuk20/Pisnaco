@@ -25,4 +25,10 @@ public class AOEAtk : MonoBehaviour
             hit.GetComponent<PlayerStat>().Hit(1);
         }
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(transform.position, attackRadius);
+    }
 }

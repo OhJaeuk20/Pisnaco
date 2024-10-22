@@ -17,11 +17,13 @@ public class MonsterSkillController : MonoBehaviour
 
     private MonsterFSMInfo FSMInfo;
     private Animator animator;
+    private BossHealth bossHp;
 
     void Start()
     {
         FSMInfo = GetComponent<MonsterFSMInfo>();
         animator = GetComponent<Animator>();
+        bossHp = GetComponent<BossHealth>();
         defaultAttackDistance = FSMInfo.AttackDistance;
     }
 
@@ -49,7 +51,7 @@ public class MonsterSkillController : MonoBehaviour
 
         foreach (MonsterSkill skill in skillVarient )
         {
-            if (skill.InRange() && skill.IsReady() && skill.priority < highestPriority)
+            if (skill.InRange() && skill.IsReady() && skill.phaseLevel <= (int)(bossHp.currentPhase) &&skill.priority < highestPriority)
             {
                 highestPriority = skill.priority;
                 nextSkill = skill;
