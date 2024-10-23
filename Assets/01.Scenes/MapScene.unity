@@ -23503,8 +23503,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42731218155267c4291e6edc6b20654e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackForce: 0
-  knockbackTime: 0
   stunDuration: 0
   currentStunTime: 0
   moveDirection: {x: 0, y: 0, z: 0}
