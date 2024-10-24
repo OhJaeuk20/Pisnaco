@@ -534,7 +534,7 @@ GameObject:
   - component: {fileID: 2750123020550812838}
   m_Layer: 8
   m_Name: Skeleton_Ranger
-  m_TagString: Untagged
+  m_TagString: MONSTER
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -640,14 +640,10 @@ MonoBehaviour:
   attackDistance: 10
   attackSpeed: 1
   lookAtMaxSpeed: 5
-  detectDistance: 30
+  detectDistance: 100
   detectMoveSpeed: 1
   nextPointSelectDistance: 1
-  wanderPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  wanderPoints: []
   wanderMoveSpeed: 1
   wanderNavCheckRadius: 10
   giveUpMoveSpeed: 1.5

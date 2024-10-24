@@ -11266,7 +11266,7 @@ GameObject:
   - component: {fileID: 8166746615351048978}
   m_Layer: 8
   m_Name: Skeleton_Shovel
-  m_TagString: Untagged
+  m_TagString: MONSTER
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11371,14 +11371,10 @@ MonoBehaviour:
   attackDistance: 1.5
   attackSpeed: 1
   lookAtMaxSpeed: 5
-  detectDistance: 10
+  detectDistance: 100
   detectMoveSpeed: 1.5
   nextPointSelectDistance: 1
-  wanderPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  wanderPoints: []
   wanderMoveSpeed: 1
   wanderNavCheckRadius: 10
   giveUpMoveSpeed: 1.5
@@ -11431,7 +11427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd77300b4aa11134b83d78532fdf392f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animSpeed: 1.5
+  animSpeed: 1
   targetPosition: {x: Infinity, y: Infinity, z: Infinity}
   targetDistance: Infinity
 --- !u!114 &8169510828696647628

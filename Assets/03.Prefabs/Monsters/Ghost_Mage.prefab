@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 5301507399439191573}
   m_Layer: 8
   m_Name: Ghost_Mage
-  m_TagString: Untagged
+  m_TagString: MONSTER
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -342,14 +342,10 @@ MonoBehaviour:
   attackDistance: 10
   attackSpeed: 1
   lookAtMaxSpeed: 5
-  detectDistance: 30
+  detectDistance: 100
   detectMoveSpeed: 1.5
   nextPointSelectDistance: 1
-  wanderPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  wanderPoints: []
   wanderMoveSpeed: 1
   wanderNavCheckRadius: 10
   giveUpMoveSpeed: 1.5
@@ -478,7 +474,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animSpeed: 1
   deathDelayTime: 6
-  hitParticle: {fileID: 0}
+  hitParticle: {fileID: 5307725082430527653, guid: 85a52c2c913521f4cb08c5c93761f74b,
+    type: 3}
   destroyParticlePrefab: {fileID: 16079331543398793, guid: 474e88ba8f46bd14db8e2ef9a0d1c8cf,
     type: 3}
   knockbackTime: 0.15
@@ -499,6 +496,7 @@ MonoBehaviour:
   maxHp: 4
   currentHp: 4
   hpBarImage: {fileID: 0}
+  spawner: {fileID: 0}
 --- !u!114 &5301507399439191573
 MonoBehaviour:
   m_ObjectHideFlags: 0

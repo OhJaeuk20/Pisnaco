@@ -7,8 +7,10 @@ public class RotateTowardsMouse : MonoBehaviour
         // 1. 마우스 위치로부터 Raycast 생성
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
+        int layerMask = 1 << LayerMask.NameToLayer("Ground");
+
         // 2. Raycast가 닿는 위치를 계산
-        if (Physics.Raycast(ray, out RaycastHit hit))
+        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, layerMask))
         {
             // 3. 마우스가 가리키는 지점의 위치
             Vector3 targetPosition = hit.point;

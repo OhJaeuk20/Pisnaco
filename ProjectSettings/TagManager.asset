@@ -13,6 +13,9 @@ TagManager:
   - CinemachineTarget
   - FxTemporaire
   - PROJECTILE
+  - MONSTER
+  - PSPAWN
+  - PLAYERCAMERA
   layers:
   - Default
   - TransparentFX

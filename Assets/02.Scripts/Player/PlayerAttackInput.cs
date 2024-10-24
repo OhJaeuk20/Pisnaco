@@ -84,7 +84,9 @@ public class PlayerAttackInput : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit))
+        int layerMask = 1 << LayerMask.NameToLayer("Ground");
+
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
         {
             // 2. 캐릭터가 마우스 클릭한 위치를 바라보도록 회전
             Vector3 targetPosition = hit.point;  // 클릭한 지점의 월드 좌표

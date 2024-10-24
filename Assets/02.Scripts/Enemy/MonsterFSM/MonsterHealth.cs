@@ -20,6 +20,8 @@ public class MonsterHealth : MonoBehaviour, IDamagable
     private bool isHit = false;
     public bool IsHit { get => isHit; set => isHit = value; }
 
+    public MonsterSpawner spawner;
+
     private void Awake()
     {
         controller = GetComponent<MonsterFSMController>();
@@ -41,6 +43,8 @@ public class MonsterHealth : MonoBehaviour, IDamagable
         {
             // 죽음 상태로 전환
             controller.TransactionToState(MonsterFSMController.STATE.DEATH);
+            if (spawner != null)
+                spawner.MonsterDiscount();
         }
         else
         {

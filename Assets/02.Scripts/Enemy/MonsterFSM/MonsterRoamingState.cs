@@ -68,6 +68,7 @@ public class MonsterRoamingState : MonsterState
     // 새로운 배회 위치를 탐색함
     protected virtual void NewRandomDestination(bool retry)
     {
+        if (fsmInfo.WanderPoints.Length == 0) return;
         // 배회 위치 인덱스 추첨
         int index = Random.Range(0, fsmInfo.WanderPoints.Length);
 

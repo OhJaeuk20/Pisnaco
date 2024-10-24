@@ -5665,7 +5665,7 @@ GameObject:
   - component: {fileID: 8967179595407393587}
   m_Layer: 8
   m_Name: Stage1_Boss
-  m_TagString: Untagged
+  m_TagString: MONSTER
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5774,11 +5774,7 @@ MonoBehaviour:
   detectDistance: 50
   detectMoveSpeed: 1.5
   nextPointSelectDistance: 1
-  wanderPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  wanderPoints: []
   wanderMoveSpeed: 1
   wanderNavCheckRadius: 10
   giveUpMoveSpeed: 1.5
@@ -5879,7 +5875,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animSpeed: 1
-  isChanneling: 0
   dontTurn: 0
 --- !u!114 &8629759155152426166
 MonoBehaviour:
@@ -5980,11 +5975,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phaseLevel: 0
   priority: 2
+  minskillRange: 0
   skillRange: 4
   skillCoolTime: 6
   currentCooltime: 0
-  skillStartDelayTime: 0
-  skillEndDelayTime: 1
+  attackRadius: 2
+  hitAngle: 80
   knockbackForce: 0
   knockbackTime: 0
   targetLayer:
@@ -5994,8 +5990,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   attackTransform: {fileID: 1816681775609250267}
-  attackRadius: 2
-  hitAngle: 80
 --- !u!114 &1731781622919943776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6010,11 +6004,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phaseLevel: 0
   priority: 0
+  minskillRange: 0
   skillRange: 50
   skillCoolTime: 15
   currentCooltime: 5
-  skillStartDelayTime: 0
-  skillEndDelayTime: 2
+  attackRadius: 0
+  hitAngle: 0
   knockbackForce: 10
   knockbackTime: 1
   targetLayer:
@@ -6041,11 +6036,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phaseLevel: 1
   priority: 1
+  minskillRange: 0
   skillRange: 4
   skillCoolTime: 10
   currentCooltime: 0
-  skillStartDelayTime: 0
-  skillEndDelayTime: 0
+  attackRadius: 2
+  hitAngle: 80
   knockbackForce: 10
   knockbackTime: 0.3
   targetLayer:
@@ -6055,8 +6051,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   attackTransform: {fileID: 1816681775609250267}
-  attackRadius: 2
-  hitAngle: 80
 --- !u!1 &3663970104527104995
 GameObject:
   m_ObjectHideFlags: 0
